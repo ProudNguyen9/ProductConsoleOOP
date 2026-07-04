@@ -16,3 +16,26 @@ Console.WriteLine("Tạo một học sinh để tính tuổi ");
 Student student = new Student (1,"Nguyễn Hữu Hào", new DateOnly(2004, 4, 21));
 Console.WriteLine($"Học sinh {student.Id} | Tên : {student.Name} | tuổi : {student.CalculateAge()} ");
 
+Console.WriteLine();
+Console.WriteLine("Test validatetor class product");
+
+ProductValidator validator = new ProductValidator();
+
+Product product6 = new Product(6, "Cam", 15000, 10);
+
+List<string> errors = validator.Validate(product6);
+
+if (errors.Count == 0)
+{
+    Console.WriteLine("Product 6 hợp lệ.");
+}
+else
+{
+    Console.WriteLine("Product 6 không hợp lệ:");
+
+    foreach (string error in errors)
+    {
+        Console.WriteLine(error);
+    }
+}
+

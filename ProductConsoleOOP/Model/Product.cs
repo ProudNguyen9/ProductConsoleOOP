@@ -22,4 +22,37 @@ public class Product
         return totalValue;
 
     }
+
+   public void IncreaseStock(int quantity)
+{
+    if (quantity <= 0)
+    {
+        Console.WriteLine("Số lượng nhập phải lớn hơn 0.");
+        return;
+    }
+
+    this.Quantity += quantity;
+}
+
+public void DecreaseStock(int quantity)
+{
+    if (quantity <= 0)
+    {
+        Console.WriteLine("Số lượng xuất phải lớn hơn 0.");
+        return;
+    }
+
+    if (this.Quantity == 0)
+    {
+        Console.WriteLine("Sản phẩm đã hết hàng.");
+    }
+    else if (quantity > this.Quantity)
+    {
+        Console.WriteLine($"Sản phẩm không đủ (còn {this.Quantity}).");
+    }
+    else
+    {
+        this.Quantity -= quantity;
+    }
+}
 }
