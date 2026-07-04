@@ -10,5 +10,5 @@ Console.WriteLine($"Sản phẩn thứ {product2.Id} | Tên : {product2.Name} | 
 Console.WriteLine($"Sản phẩn thứ {product3.Id} | Tên : {product3.Name} | Giá : {product3.Price} | Số Lượng : {product3.Quantity}");
 Console.WriteLine($"Sản phẩn thứ {product4.Id} | Tên : {product4.Name} | Giá : {product4.Price} | Số Lượng : {product4.Quantity}");
 Console.WriteLine($"Sản phẩn thứ {product5.Id} | Tên : {product5.Name} | Giá : {product5.Price} | Số Lượng : {product5.Quantity}");
-
+Console.WriteLine($"Tổng tiền của sản phẩm 1 :{product1.TotalValue()}" );
 
