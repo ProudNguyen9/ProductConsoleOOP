@@ -12,3 +12,7 @@ Console.WriteLine($"Sản phẩn thứ {product4.Id} | Tên : {product4.Name} | 
 Console.WriteLine($"Sản phẩn thứ {product5.Id} | Tên : {product5.Name} | Giá : {product5.Price} | Số Lượng : {product5.Quantity}");
 Console.WriteLine($"Tổng tiền của sản phẩm 1 :{product1.TotalValue()}" );
 
+Console.WriteLine("Tạo một học sinh để tính tuổi ");
+Student student = new Student (1,"Nguyễn Hữu Hào", new DateOnly(2004, 4, 21));
+Console.WriteLine($"Học sinh {student.Id} | Tên : {student.Name} | tuổi : {student.CalculateAge()} ");
+
