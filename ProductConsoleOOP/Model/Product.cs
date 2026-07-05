@@ -55,4 +55,5 @@ public void DecreaseStock(int quantity)
         this.Quantity -= quantity;
     }
 }
+public override string ToString() => $"ID: {Id} | Tên: {Name} | Giá: {Price:N0} VNĐ | SL: {Quantity} | Tổng: {TotalValue():N0} VNĐ";
 }
