@@ -5,5 +5,7 @@ public interface IProductService
     Product? GetById(int id);
     void Update(Product product);
     void Delete(int id);
-
+    decimal GetTotalInventoryValue();
+    List<Product> SearchByName(string keyword);
+    List<Product> GetLowStockProducts(int minQuantity);
 }

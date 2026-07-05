@@ -81,4 +81,43 @@ public class ProductService : IProductService
 
         Console.WriteLine("Cập nhật thành công");
     }
+    public decimal GetTotalInventoryValue()
+    {
+        decimal total = 0;
+
+        foreach (Product product in products)
+        {
+            total += product.TotalValue();
+        }
+
+        return total;
+    }
+    public List<Product> SearchByName(string keyword)
+    {
+        List<Product> result = new List<Product>();
+
+        foreach (Product product in products)
+        {
+            if (product.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Add(product);
+            }
+        }
+
+        return result;
+    }
+    public List<Product> GetLowStockProducts(int minQuantity)
+    {
+        List<Product> result = new List<Product>();
+
+        foreach (Product product in products)
+        {
+            if (product.Quantity < minQuantity)
+            {
+                result.Add(product);
+            }
+        }
+
+        return result;
+    }
 }
