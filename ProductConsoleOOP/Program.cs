@@ -10,39 +10,16 @@ while (true)
     Console.WriteLine("5. Xóa");
     Console.WriteLine("0. Thoát");
 
-    Console.Write("Chọn: ");
-    int choice;
-
-    if (!int.TryParse(Console.ReadLine(), out choice))
-    {
-        Console.WriteLine("Vui lòng nhập số!");
-        Console.WriteLine();
-        continue;
-    }
+    int choice = MenuHelper.ReadInt("Chọn: ");
 
     switch (choice)
     {
         case 1:
             Product product = new Product();
 
-            Console.Write("Tên: ");
-            product.Name = Console.ReadLine();
-
-            decimal price;
-            Console.Write("Giá: ");
-            while (!decimal.TryParse(Console.ReadLine(), out price))
-            {
-                Console.Write("Giá không hợp lệ. Nhập lại: ");
-            }
-            product.Price = price;
-
-            int quantity;
-            Console.Write("Số lượng: ");
-            while (!int.TryParse(Console.ReadLine(), out quantity))
-            {
-                Console.Write("Số lượng không hợp lệ. Nhập lại: ");
-            }
-            product.Quantity = quantity;
+            product.Name = MenuHelper.ReadString("Tên: ");
+            product.Price = MenuHelper.ReadDecimal("Giá: ");
+            product.Quantity = MenuHelper.ReadInt("Số lượng: ");
 
             productService.Add(product);
             break;
@@ -64,12 +41,7 @@ while (true)
             break;
 
         case 3:
-            int id;
-            Console.Write("Nhập Id: ");
-            while (!int.TryParse(Console.ReadLine(), out id))
-            {
-                Console.Write("Id không hợp lệ. Nhập lại: ");
-            }
+            int id = MenuHelper.ReadInt("Nhập Id: ");
 
             Product? productById = productService.GetById(id);
 
@@ -86,44 +58,16 @@ while (true)
         case 4:
             Product updateProduct = new Product();
 
-            int updateId;
-            Console.Write("Nhập Id: ");
-            while (!int.TryParse(Console.ReadLine(), out updateId))
-            {
-                Console.Write("Id không hợp lệ. Nhập lại: ");
-            }
-            updateProduct.Id = updateId;
-
-            Console.Write("Tên mới: ");
-            updateProduct.Name = Console.ReadLine();
-
-            decimal newPrice;
-            Console.Write("Giá mới: ");
-            while (!decimal.TryParse(Console.ReadLine(), out newPrice))
-            {
-                Console.Write("Giá không hợp lệ. Nhập lại: ");
-            }
-            updateProduct.Price = newPrice;
-
-            int newQuantity;
-            Console.Write("Số lượng mới: ");
-            while (!int.TryParse(Console.ReadLine(), out newQuantity))
-            {
-                Console.Write("Số lượng không hợp lệ. Nhập lại: ");
-            }
-            updateProduct.Quantity = newQuantity;
+            updateProduct.Id= MenuHelper.ReadInt("Nhập Id:");
+            updateProduct.Name = MenuHelper.ReadString("Tên mới:");
+            updateProduct.Price = MenuHelper.ReadDecimal("Giá mới :");
+            updateProduct.Quantity = MenuHelper.ReadInt("Số lượng mới : ");
 
             productService.Update(updateProduct);
             break;
 
         case 5:
-            int deleteId;
-            Console.Write("Nhập Id cần xóa: ");
-            while (!int.TryParse(Console.ReadLine(), out deleteId))
-            {
-                Console.Write("Id không hợp lệ. Nhập lại: ");
-            }
-
+            int deleteId = MenuHelper.ReadInt("Nhập Id cần xóa: ");
             productService.Delete(deleteId);
             break;
 

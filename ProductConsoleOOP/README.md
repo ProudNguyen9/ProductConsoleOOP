@@ -7,3 +7,5 @@ Class như một khuôn mẫu  để tạo ra đối tượng  còn object là t
 Day 2 em làm được tạo class tạo object tạo hàm  check lỗi và tính đống gói get set ,...
 
 Day 3 em làm  các cấu linq  và curd sản phẩm
+
+Day 4 em làm tạo   service , tạo inteface , implement interface ,  tạo helper cho input
