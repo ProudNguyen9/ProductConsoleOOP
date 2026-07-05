@@ -31,7 +31,7 @@ Hiển thị Menu
 
 ![1783263922416](image/README/1783263922416.png)
 
-Chọn các chức năng 
+Chọn các chức năng
 
 ![1783264009336](image/README/1783264009336.png)
 
@@ -39,3 +39,5 @@ Chọn các chức năng
 Quay lại Menu
 
 Video giải thích cấu trúc .
+
+![1783266281566](image/README/1783266281566.mp4)
