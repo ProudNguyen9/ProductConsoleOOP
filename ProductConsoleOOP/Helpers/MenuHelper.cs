@@ -23,7 +23,7 @@ public static class MenuHelper
     }
     public static string ReadString(string message)
 {
-    string value;
+    string? value;
 
     Console.Write(message);
 

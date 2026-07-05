@@ -25,7 +25,7 @@ public class ProductService : IProductService
 
     public void Delete(int id)
     {
-        Product Productid = products.FirstOrDefault(p => p.Id == id);
+        Product? Productid = products.FirstOrDefault(p => p.Id == id);
         if (Productid != null)
         {
             products.Remove(Productid);
